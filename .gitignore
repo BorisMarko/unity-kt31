@@ -83,3 +83,4 @@ Assets/Scenes/Game map/Game map.unity
 *.unity
 Assets/Scenes/Game map/Game map.unity
 Assets/JP Environmental Asset Pack/Materials/Terrain Materials/New Terrain.asset
+ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
