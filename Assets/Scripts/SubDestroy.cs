@@ -10,7 +10,7 @@ public class SelfDestruct : MonoBehaviour
         StartCoroutine(DestructAfterTime());
     }
 
-    IEnumerator DestructAfterTime()
+    IEnumerator DestructAfterTimeCoroutine()
     {
         // Ждем указанное время и затем уничтожаем объект
         yield return new WaitForSeconds(lifetime);
