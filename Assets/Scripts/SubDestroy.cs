@@ -1,13 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-public class SelfDestruct : MonoBehaviour
+public class SubDestroy : MonoBehaviour
 {
     public float lifetime; // Время жизни объекта
 
     void Start()
     {
-        StartCoroutine(DestructAfterTime());
+        StartCoroutine(DestructAfterTimeCoroutine());
     }
 
     IEnumerator DestructAfterTimeCoroutine()

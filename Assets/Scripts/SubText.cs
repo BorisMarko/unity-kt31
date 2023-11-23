@@ -21,10 +21,6 @@ public class SubText : MonoBehaviour
         {
             subtext.font = customFont;
         }
-        else
-        {
-            Debug.LogWarning("Custom font or subtext component is null.");
-        }
     }
 
     void FixedUpdate()
@@ -37,10 +33,6 @@ public class SubText : MonoBehaviour
             {
                 subtext.text = textSubtitle[i];
             }
-            else
-            {
-                Debug.LogWarning("Компонент subtext равен null.");
-            }
 
             timer += 1 * Time.deltaTime;
 
@@ -50,11 +42,6 @@ public class SubText : MonoBehaviour
                 i += 1;
                 timer = 0;
             }
-        }
-        else
-        {
-            // Логика обработки, если условия не выполнены
-            Debug.LogWarning("Массив textSubtitle равен null или индекс i выходит за пределы массива.");
         }
     }
 }
