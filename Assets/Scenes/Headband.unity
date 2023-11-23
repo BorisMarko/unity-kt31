@@ -434,6 +434,7 @@ MonoBehaviour:
   - Who am I?
   - Only screams, moaning fear, and a deathly blow to the skull. Darkness engulfs
     me like an ominous pool.
+  - Need to turn on the camera...
   delayBetweenTexts: 5
   nextSceneName: Game map
 --- !u!1 &1637841378
@@ -570,7 +571,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
