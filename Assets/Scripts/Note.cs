@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NoteAppier : MonoBehaviour
+public class Note : MonoBehaviour
 {
     [SerializeField]
     private Image _noteImage; // Ссылка на компонент изображения, который представляет записку
@@ -58,14 +58,17 @@ public class NoteAppier : MonoBehaviour
             }
         }
     }
+
     // Метод для обновления видимости записки в соответствии с флагом
     private void UpdateNoteVisibility()
     {
         _noteImage.enabled = isNoteVisible;
     }
-    // Метод, который возвращает, видна ли записка
-    internal bool IsNoteVisible()
+
+    // Метод для взаимодействия с запиской
+    public void Interact()
     {
-        throw new NotImplementedException(); // Здесь должна быть реализация, но пока не предоставлена
+        // Логика, связанная с запиской при взаимодействии
+        // Здесь можно добавить дополнительные действия, связанные с взаимодействием с запиской
     }
 }

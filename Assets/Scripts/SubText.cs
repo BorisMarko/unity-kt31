@@ -1,47 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SubText : MonoBehaviour
 {
     public string[] textSubtitle;
-
     public Text subtext;
-    public Font customFont; // Add a public variable for the custom font
-    public float NextText;
-    public int endVoice;
-    private float timer;
-    private int i;
+    public Font customFont;
+    public float nextTextDelay;
+    private int currentIndex;
 
-    void Start()
+    private void Start()
     {
-        // Check if a custom font is provided and set it
         if (customFont != null && subtext != null)
         {
             subtext.font = customFont;
         }
+
+        StartCoroutine(DisplayText());
     }
 
-    void FixedUpdate()
+    private IEnumerator DisplayText()
     {
-        // ѕровер€ем, что массив textSubtitle не €вл€етс€ null и i находитс€ в пределах массива
-        if (textSubtitle != null && i < textSubtitle.Length)
+        foreach (string sentence in textSubtitle)
         {
-            // ѕровер€ем, что subtext не €вл€етс€ null
-            if (subtext != null)
+            for (int i = 0; i <= sentence.Length; i++)
             {
-                subtext.text = textSubtitle[i];
+                subtext.text = sentence.Substring(0, i);
+                yield return new WaitForSeconds(nextTextDelay);
             }
 
-            timer += 1 * Time.deltaTime;
-
-            // ѕровер€ем условие дл€ перехода к следующему элементу массива
-            if (timer >= NextText)
-            {
-                i += 1;
-                timer = 0;
-            }
+            // ѕодождите некоторое врем€ перед отображением следующего текста
+            yield return new WaitForSeconds(nextTextDelay);
         }
     }
 }

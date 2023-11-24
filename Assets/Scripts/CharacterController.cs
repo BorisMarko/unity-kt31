@@ -6,11 +6,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float _gravity;
     [SerializeField] private float _jumpPower;
 
+    private bool isNoteVisible = false; // Устанавливается в true, когда записка открыта
     private CharacterController _characterController;
     private Vector3 _walkDirection;
     private Vector3 _velocity;
     private float _speed;
-    private bool isNoteVisible = false; // Set this to true when the note is open
 
     private void Start()
     {

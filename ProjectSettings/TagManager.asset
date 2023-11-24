@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NoteObject
   - Camera
+  - Notions
   layers:
   - Default
   - TransparentFX

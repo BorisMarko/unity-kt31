@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MotionFreeze: MonoBehaviour
+public class MotionFreeze : MonoBehaviour
 {
     public GameObject player;
     public GameObject cameraObject;
@@ -9,11 +9,11 @@ public class MotionFreeze: MonoBehaviour
     void Update()
     {
         // Проверяем, нажата ли клавиша для использования
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !isUsed)
         {
             // Вызываем метод для заморозки движения персонажа и камеры
-            FreezeMovement(!isUsed); // Изменено: замораживаем, если isUsed = false, и наоборот
-            isUsed = !isUsed; // Изменено: инвертируем значение isUsed
+            FreezeMovement(true);
+            isUsed = true;
         }
 
         // Проверяем, нажата ли клавиша Q
@@ -21,7 +21,7 @@ public class MotionFreeze: MonoBehaviour
         {
             // Вызываем метод для размораживания движения персонажа и камеры
             FreezeMovement(false);
-            isUsed = false; // Изменено: устанавливаем isUsed в false при закрытии записки
+            isUsed = false;
         }
     }
 
