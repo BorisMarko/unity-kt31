@@ -6,11 +6,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float _gravity;
     [SerializeField] private float _jumpPower;
 
-    private bool isNoteVisible = false; // Устанавливается в true, когда записка открыта
     private CharacterController _characterController;
     private Vector3 _walkDirection;
     private Vector3 _velocity;
     private float _speed;
+    private bool isNoteVisible = false; // Устанавливается в true, когда записка открыта
 
     private void Start()
     {
@@ -22,13 +22,15 @@ public class Player : MonoBehaviour
     {
         if (!isNoteVisible)
             HandleMovementInput();
-
     }
 
     private void FixedUpdate()
     {
-        Walk(_walkDirection);
-        DoGravity(_characterController.isGrounded);
+        if (gameObject.activeSelf)
+        {
+            Walk(_walkDirection);
+            DoGravity(_characterController.isGrounded);
+        }
     }
 
     private void HandleMovementInput()
@@ -43,15 +45,21 @@ public class Player : MonoBehaviour
 
     private void Walk(Vector3 direction)
     {
-        _characterController.Move(direction * _speedWalk * Time.fixedDeltaTime);
+        if (_characterController != null && _characterController.enabled && _characterController.gameObject.activeSelf)
+        {
+            _characterController.Move(direction * _speedWalk * Time.fixedDeltaTime);
+        }
     }
 
     private void DoGravity(bool isGrounded)
     {
-        if (isGrounded && _velocity.y < 0)
-            _velocity.y = -1f;
-        _velocity.y -= _gravity * Time.fixedDeltaTime;
-        _characterController.Move(_velocity * Time.fixedDeltaTime);
+        if (_characterController != null && _characterController.enabled && _characterController.gameObject.activeSelf)
+        {
+            if (isGrounded && _velocity.y < 0)
+                _velocity.y = -1f;
+            _velocity.y -= _gravity * Time.fixedDeltaTime;
+            _characterController.Move(_velocity * Time.fixedDeltaTime);
+        }
     }
 
     private void Jump(bool canJump)
@@ -64,4 +72,5 @@ public class Player : MonoBehaviour
     {
         _characterController.height = canSit ? 1f : 2f;
     }
+
 }

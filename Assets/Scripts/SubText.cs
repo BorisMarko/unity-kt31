@@ -8,7 +8,6 @@ public class SubText : MonoBehaviour
     public Text subtext;
     public Font customFont;
     public float nextTextDelay;
-    private int currentIndex;
 
     private void Start()
     {
