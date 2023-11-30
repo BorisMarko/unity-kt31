@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
     private void Walk(Vector3 direction)
     {
-        if (_characterController != null && _characterController.enabled && _characterController.gameObject.activeSelf)
+        if (IsCharacterControllerValid())
         {
             _characterController.Move(direction * _speedWalk * Time.fixedDeltaTime);
         }
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
     private void DoGravity(bool isGrounded)
     {
-        if (_characterController != null && _characterController.enabled && _characterController.gameObject.activeSelf)
+        if (IsCharacterControllerValid())
         {
             if (isGrounded && _velocity.y < 0)
                 _velocity.y = -1f;
@@ -73,4 +73,8 @@ public class Player : MonoBehaviour
         _characterController.height = canSit ? 1f : 2f;
     }
 
+    private bool IsCharacterControllerValid()
+    {
+        return _characterController != null && _characterController.enabled && _characterController.gameObject.activeSelf;
+    }
 }
