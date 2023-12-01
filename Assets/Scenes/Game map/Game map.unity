@@ -8056,6 +8056,7 @@ GameObject:
   - component: {fileID: 1307212845}
   - component: {fileID: 1307212844}
   - component: {fileID: 1307212843}
+  - component: {fileID: 1307212848}
   m_Layer: 0
   m_Name: Bonfire
   m_TagString: Untagged
@@ -8258,6 +8259,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307212841}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1307212848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307212841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050c107c5cbbaff4ba7f67e345eda1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SubtitleText: {fileID: 1585084260}
+  subtitleTexts:
+  - The bonfire has long since been extinguished
+  - Maybe I'll find something useful here?
+  customFont: {fileID: 12800000, guid: b9bf4ee1a27268245a3fd2015a5a1511, type: 3}
+  letterDelay: 0.05
 --- !u!1 &1326198219
 GameObject:
   m_ObjectHideFlags: 0
@@ -8453,7 +8472,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: b9bf4ee1a27268245a3fd2015a5a1511, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0

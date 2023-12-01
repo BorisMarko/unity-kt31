@@ -15,11 +15,9 @@ public class SubText : MonoBehaviour
         {
             subtext.font = customFont;
         }
-
-        StartCoroutine(DisplayText());
     }
 
-    private IEnumerator DisplayText()
+    public IEnumerator DisplayText()
     {
         foreach (string sentence in textSubtitle)
         {
