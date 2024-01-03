@@ -3,11 +3,8 @@ using UnityEngine.UI;
 
 public class NoteAppier : MonoBehaviour
 {
-    [SerializeField]
-    private Image _noteImage;
-
-    [SerializeField]
-    private Text _openNoteText; // Связать это с вашим объектом Text в инспекторе
+    [SerializeField] private Image _noteImage;
+    [SerializeField] private Text _openNoteText; // Связать это с вашим объектом Text в инспекторе
 
     private bool isNoteVisible = false;
     private bool isInTriggerZone = false;

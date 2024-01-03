@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class SubText : MonoBehaviour
 {
-    public string[] textSubtitle;
-    public Text subtext;
-    public Font customFont;
-    public float nextTextDelay;
+    [SerializeField] private string[] textSubtitle;
+    [SerializeField] private Text subtext;
+    [SerializeField] private Font customFont;
+    [SerializeField] private float nextTextDelay;
 
     private void Start()
     {

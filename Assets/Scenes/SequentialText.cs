@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SequentialText : MonoBehaviour
 {
-    public Text textElement;
-    public string[] texts;
-    public float delayBetweenTexts = 2f;
-    public string nextSceneName;  // Имя следующей сцены
+    [SerializeField] private Text textElement;
+    [SerializeField] private float delayBetweenTexts = 2f;
+    [SerializeField] private string nextSceneName;  // Имя следующей сцены
+
+    private string[] texts;
 
     private void Start()
     {

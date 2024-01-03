@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 public class SubtitleTrigger : MonoBehaviour
 {
-    public Text SubtitleText;
-    public List<string> subtitleTexts = new List<string>();
-    public Font customFont;
-    public float letterDelay = 0.1f;
+    [SerializeField] private Text SubtitleText;
+    [SerializeField] private List<string> subtitleTexts = new List<string>();
+    [SerializeField] private Font customFont;
+    [SerializeField] private float letterDelay = 0.1f;
 
     public delegate void SubtitleEventHandler();
     public event SubtitleEventHandler OnSubtitleComplete;

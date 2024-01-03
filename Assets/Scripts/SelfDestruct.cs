@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 public class SelfDestruct : MonoBehaviour
 {
-    public float lifetime; // Время жизни объекта
+    [SerializeField] private float lifetime; // Время жизни объекта
 
-    void Start()
+    private void Start()
     {
         StartCoroutine(DestructAfterTime());
     }
 
-    IEnumerator DestructAfterTime()
+    public IEnumerator DestructAfterTime()
     {
         // Ждем указанное время и затем уничтожаем объект
         yield return new WaitForSeconds(lifetime);

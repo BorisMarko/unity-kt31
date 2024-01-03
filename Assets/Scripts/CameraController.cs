@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float sensitivity = 2.0f; // Чувствительность мыши
-    public float maxYAngle = 80.0f; // Максимальный угол вращения по вертикали
+    [SerializeField] private float sensitivity = 2.0f; // Чувствительность мыши
+    [SerializeField] private float maxYAngle = 80.0f; // Максимальный угол вращения по вертикали
 
     private float rotationX = 0.0f;
 
